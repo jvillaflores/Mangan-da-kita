@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mangan da Kita</title>
 
+    <script src="store.js" async></script>
     <link rel="stylesheet" href="order.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -73,65 +74,84 @@
 
       <!------------------------MENU ORDERS---------------------------------->
       <section class="container content-section">
-      <h3 class="section-header mb-3">MENU ORDERS</h3>
-      <div class="ven"  style="padding-left: 30%; padding-right: 30%">
-      <table class="table " style="padding-left: 30%">
-          <thead>
-            <tr>
-              <th scope="col">CATEGORY</th>
-              <th scope="col"> </th>
-              <th scope="col">PRICE</th>
-              
-            </tr>
-          </thead>
-          <tbody>
-              
-            <tr>
-              <th scope="row">SEAFOOD</th>
-              <td>Sinigang na Hipon</td>
-              <td>250</td>
-            </tr>
+        <h2 class="section-header mb-3">MENU</h2>
+        <div class="shop-items">
+            <div class="shop-item">
+                <span class="shop-item-title">Sinigang na Hipon</span>
+                <img class="shop-item-image" src="sinigang-hipon.jpg">
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₱250.00</span>
+                    <button class="btn btn-success shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <span class="shop-item-title">Tuna</span>
+                <img class="shop-item-image" src="tuna.jpg">
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₱400.00</span>
+                    <button class="btn btn-success shop-item-button"type="button">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <span class="shop-item-title">Chicken Adobo</span>
+                <img class="shop-item-image" src="chickadobo.jpeg">
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₱235.00</span>
+                    <button class="btn btn-success shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+        <div class="shop-items">
+            <div class="shop-item">
+                <span class="shop-item-title">Chicken Curry</span>
+                <img class="shop-item-image" src="curry.jpg">
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₱245.00</span>
+                    <button class="btn btn-success shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
 
-            <tr>
-              <th scope="row"> </th>
-              <td>Tuna</td>
-              <td>450</td>
-            </tr>
+            <div class="shop-item">
+              <span class="shop-item-title">Pork Adobo</span>
+              <img class="shop-item-image" src="adobopork.jpg">
+              <div class="shop-item-details">
+                  <span class="shop-item-price">₱255.00</span>
+                  <button class="btn btn-success shop-item-button" type="button">ADD TO CART</button>
+              </div>
+          </div>
 
-            <tr>
-              <th scope="row">CHICKEN</th>
-              <td>Adobo</td>
-              <td>250</td>
-            </tr>
-
-            <tr>
-              <th scope="row"> </th>
-              <td>Chicken Curry</td>
-              <td>260</td>
-            </tr>
-
-            <tr>
-              <th scope="row">PORK</th>
-              <td>Adobo</td>
-              <td>200</td>
-            </tr>
-
-            <tr>
-              <th scope="row"> </th>
-              <td>Lechon</td>
-              <td>150</td>
-            </tr>
-            
-          </tbody>
-        </table>
-      </div>
-
+          <div class="shop-item">
+            <span class="shop-item-title">Boneless Lechon</span>
+            <img class="shop-item-image" src="lechon.jpg">
+            <div class="shop-item-details">
+                <span class="shop-item-price">₱599.00</span>
+                <button class="btn btn-success shop-item-button" type="button">ADD TO CART</button>
+            </div>
+        </div>
+        </div>
     </section>
+
+
+
       
       <!--------------------------- ORDER FORM ------------------------------->
       
 
-    
+    <section class="container content-section" style="padding-inline: 10%;">
+      <h2 class="section-header">CART</h2>
+      <div class="cart-row">
+          <span class="cart-item cart-header cart-column">ITEM</span>
+          <span class="cart-price cart-header cart-column">PRICE</span>
+          <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+      </div>
+      <div class="cart-items">
+      </div>
+      <div class="cart-total">
+          <strong class="cart-total-title">Total</strong>
+          <span class="cart-total-price">₱0</span>
+      </div>
+      
+  </section>
 
   <section class="container content-section">
     <h3 class="section-header mb-3">ORDER FORM</h3>
@@ -171,86 +191,7 @@
           </div>
     </div>
 
-        <div class="row mb-3"> 
-          <div class="col-md-6">
-            <label for="validationDefault04" class="form-label">Item</label>
-            <select class="form-select" id="Order1" required>
-                <option selected disabled value="">Choose...</option>
-                <option value ="Sinigang na Hipon">Sinigang na Hipon</option>
-                <option value = "Tuna">Tuna</option>
-                <option value = "Chicken Adobo">Chicken Adobo</option>
-                <option value = "Chicken Curry">Chicken Curry</option>
-                <option value = "Pork Adobo">Pork Adobo</option>
-                <option value = "Lechon">Lechon</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <label for="validationDefault04" class="form-label">Quantity</label>
-            <select class="form-select" id="Quantity1" required>
-                <option selected disabled value="">Choose...</option>
-                <option value ="1">1</option>
-                <option value = "2">2</option>
-                <option value = "3">3</option>
-                <option value = "4">4</option>
-                <option value = "5">5</option>
-            </select>
-          </div>
-    </div>
-
-    <div class="row mb-3"> 
-      <div class="col-md-6">
-        <label for="validationDefault04" class="form-label">Item</label>
-        <select class="form-select" id="Order2" required>
-            <option selected disabled value="">Choose...</option>
-            <option value ="Sinigang na Hipon">Sinigang na Hipon</option>
-            <option value = "Tuna">Tuna</option>
-            <option value = "Chicken Adobo">Chicken Adobo</option>
-            <option value = "Chicken Curry">Chicken Curry</option>
-            <option value = "Pork Adobo">Pork Adobo</option>
-            <option value = "Lechon">Lechon</option>
-        </select>
-      </div>
-      <div class="col-md-6">
-        <label for="validationDefault04" class="form-label">Quantity</label>
-        <select class="form-select" id="Quantity2" required>
-            <option selected disabled value="">Choose...</option>
-            <option value ="1">1</option>
-            <option value = "2">2</option>
-            <option value = "3">3</option>
-            <option value = "4">4</option>
-            <option value = "5">5</option>
-        </select>
-      </div>
-    </div>
-    <div class="row mb-3"> 
-      <div class="col-md-6">
-        <label for="validationDefault04" class="form-label">Item</label>
-        <select class="form-select" id="Order3" required>
-            <option selected disabled value="">Choose...</option>
-            <option value ="Sinigang na Hipon">Sinigang na Hipon</option>
-            <option value = "Tuna">Tuna</option>
-            <option value = "Chicken Adobo">Chicken Adobo</option>
-            <option value = "Chicken Curry">Chicken Curry</option>
-            <option value = "Pork Adobo">Pork Adobo</option>
-            <option value = "Lechon">Lechon</option>
-        </select>
-      </div>
-      <div class="col-md-6">
-        <label for="validationDefault04" class="form-label">Quantity</label>
-        <select class="form-select" id="Quantity3" required>
-            <option selected disabled value="">Choose...</option>
-            <option value ="1">1</option>
-            <option value = "2">2</option>
-            <option value = "3">3</option>
-            <option value = "4">4</option>
-            <option value = "5">5</option>
-        </select>
-      </div>
-  </div>
-
-      
-
-    <button class="btn btn-success w-100 mb-3" type="button" id="place-order">PURCHASE</button>
+    <button class="btn btn-success btn-purchase w-100" type="button" id="place-order">PURCHASE</button>
 
   </section>
 
@@ -288,17 +229,17 @@
 
         //==========
 
-            const date = document.getElementById('dateInput');
-            const orderType = document.getElementById('orderTypeInput');
-            const customerName = document.getElementById('cNameInput');
-            const address = document.getElementById('AdrsInput');
+            // const order = document.getElementById('orderInput');
             
-             const o1 = document.getElementById('Order1');
-             const q1 = document.getElementById('Quantity1');
-             const o2 = document.getElementById('Order2');
-             const q2 = document.getElementById('Quantity2');
-             const o3 = document.getElementById('Order3');
-             const q3 = document.getElementById('Quantity3');
+
+
+            
+             const seafood = document.getElementById('seaInput');
+             const squantity = document.getElementById('SQInput');
+             const chicken = document.getElementById('ChiInput');
+             const cquantity = document.getElementById('CQInput');
+             const pork = document.getElementById('porkInput');
+             const pquantity = document.getElementById('PQInput');
 
              const placeorder = document.getElementById('place-order');
 
@@ -312,12 +253,6 @@
               OrderType: orderType.value,
               CustomersName: customerName.value,
               CustomerAddress: address.value,
-              Order1 : o1.value,
-              Order2 : o2.value,
-              Order3 : o3.value,
-              Quantity1 : q1.value,
-              Quantity2 : q2.value,
-              Quantity3 : q3.value,
               
 
           })
